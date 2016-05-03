@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Alamofire.request(.GET,"http://localhost:3000/students")
+            .response { (request, response, data, error) in
+                print(response)
+                print(data)
+                print(error)
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -20,6 +28,7 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+  
 
 }
 
