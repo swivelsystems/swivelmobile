@@ -15,6 +15,7 @@
 		AAAA258E1CD53C6A0096D0A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA258C1CD53C6A0096D0A1 /* LaunchScreen.storyboard */; };
 		AAAA25991CD53C6A0096D0A1 /* SwivelMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA25981CD53C6A0096D0A1 /* SwivelMobileTests.swift */; };
 		AAAA25A41CD53C6A0096D0A1 /* SwivelMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA25A31CD53C6A0096D0A1 /* SwivelMobileUITests.swift */; };
+		AAC232AE1CD92250005AAE42 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC232AD1CD9224F005AAE42 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AAAA259F1CD53C6A0096D0A1 /* SwivelMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwivelMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAAA25A31CD53C6A0096D0A1 /* SwivelMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwivelMobileUITests.swift; sourceTree = "<group>"; };
 		AAAA25A51CD53C6A0096D0A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAC232AD1CD9224F005AAE42 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		AAAA25801CD53C6A0096D0A1 /* SwivelMobile */ = {
 			isa = PBXGroup;
 			children = (
+				AAC232AD1CD9224F005AAE42 /* SwiftyJSON.swift */,
 				AAAA25811CD53C6A0096D0A1 /* AppDelegate.swift */,
 				AAAA25831CD53C6A0096D0A1 /* FirstViewController.swift */,
 				AAAA25851CD53C6A0096D0A1 /* SecondViewController.swift */,
@@ -263,6 +266,7 @@
 				AAAA25861CD53C6A0096D0A1 /* SecondViewController.swift in Sources */,
 				AAAA25821CD53C6A0096D0A1 /* AppDelegate.swift in Sources */,
 				AAAA25841CD53C6A0096D0A1 /* FirstViewController.swift in Sources */,
+				AAC232AE1CD92250005AAE42 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +495,7 @@
 				AAAA25AA1CD53C6A0096D0A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAAA25AB1CD53C6A0096D0A1 /* Build configuration list for PBXNativeTarget "SwivelMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				AAAA25AD1CD53C6A0096D0A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAAA25AE1CD53C6A0096D0A1 /* Build configuration list for PBXNativeTarget "SwivelMobileUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +513,7 @@
 				AAAA25B01CD53C6A0096D0A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
