@@ -101,14 +101,11 @@
 		AAAA25801CD53C6A0096D0A1 /* SwivelMobile */ = {
 			isa = PBXGroup;
 			children = (
-				AAC232AD1CD9224F005AAE42 /* SwiftyJSON.swift */,
+				AAC232B21CD9231A005AAE42 /* Supporting Files */,
+				AAC232B01CD922F8005AAE42 /* Libraries */,
 				AAAA25811CD53C6A0096D0A1 /* AppDelegate.swift */,
 				AAAA25831CD53C6A0096D0A1 /* FirstViewController.swift */,
 				AAAA25851CD53C6A0096D0A1 /* SecondViewController.swift */,
-				AAAA25871CD53C6A0096D0A1 /* Main.storyboard */,
-				AAAA258A1CD53C6A0096D0A1 /* Assets.xcassets */,
-				AAAA258C1CD53C6A0096D0A1 /* LaunchScreen.storyboard */,
-				AAAA258F1CD53C6A0096D0A1 /* Info.plist */,
 			);
 			path = SwivelMobile;
 			sourceTree = "<group>";
@@ -129,6 +126,25 @@
 				AAAA25A51CD53C6A0096D0A1 /* Info.plist */,
 			);
 			path = SwivelMobileUITests;
+			sourceTree = "<group>";
+		};
+		AAC232B01CD922F8005AAE42 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				AAC232AD1CD9224F005AAE42 /* SwiftyJSON.swift */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		AAC232B21CD9231A005AAE42 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA258C1CD53C6A0096D0A1 /* LaunchScreen.storyboard */,
+				AAAA25871CD53C6A0096D0A1 /* Main.storyboard */,
+				AAAA258A1CD53C6A0096D0A1 /* Assets.xcassets */,
+				AAAA258F1CD53C6A0096D0A1 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
