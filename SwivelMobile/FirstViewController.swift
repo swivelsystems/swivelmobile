@@ -14,10 +14,11 @@ class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alamofire.request(.GET,"http://localhost:3000/students")
+        
+        Alamofire.request(.GET,"http://localhost:3000/teachers")
             .response { (request, response, data, error) in
                 print(response)
-                print(data)
+                print(JSON(data: data!))
                 print(error)
         }
         // Do any additional setup after loading the view, typically from a nib.
