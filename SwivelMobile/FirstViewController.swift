@@ -10,15 +10,18 @@ import UIKit
 import Alamofire
 
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    //Table Rendering
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         Alamofire.request(.GET,"http://localhost:3000/teachers")
             .response { (request, response, data, error) in
                 print(response)
-                print(JSON(data: data!))
+                self.display.text = JSON(data: data!)[0]["name"].string
                 print(error)
         }
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,7 +32,14 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-  
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> {
+        return 3
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return
+    }
+
 
 }
 

@@ -19,6 +19,7 @@
 		AAC232CE1CD92845005AAE42 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC232BE1CD927CD005AAE42 /* Alamofire.framework */; };
 		AAC232CF1CD92873005AAE42 /* Alamofire.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = AAC232BE1CD927CD005AAE42 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAC232D11CD928D9005AAE42 /* serverAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC232D01CD928D9005AAE42 /* serverAPI.swift */; };
+		AAFC4A661CD98F3C0009150C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC4A651CD98F3C0009150C /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		AAC232AD1CD9224F005AAE42 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		AAC232B31CD927CC005AAE42 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		AAC232D01CD928D9005AAE42 /* serverAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serverAPI.swift; sourceTree = "<group>"; };
+		AAFC4A651CD98F3C0009150C /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				AAAA25831CD53C6A0096D0A1 /* FirstViewController.swift */,
 				AAC232D01CD928D9005AAE42 /* serverAPI.swift */,
 				AAAA25851CD53C6A0096D0A1 /* SecondViewController.swift */,
+				AAFC4A651CD98F3C0009150C /* CustomCell.swift */,
 			);
 			path = SwivelMobile;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				AAAA25861CD53C6A0096D0A1 /* SecondViewController.swift in Sources */,
 				AAAA25821CD53C6A0096D0A1 /* AppDelegate.swift in Sources */,
 				AAAA25841CD53C6A0096D0A1 /* FirstViewController.swift in Sources */,
+				AAFC4A661CD98F3C0009150C /* CustomCell.swift in Sources */,
 				AAC232AE1CD92250005AAE42 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
