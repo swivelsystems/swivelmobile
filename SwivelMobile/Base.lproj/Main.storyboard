@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Announcements-->
@@ -23,7 +24,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6A2-rB-6qx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6A2-rB-6qx">
                                 <rect key="frame" x="20" y="57" width="560" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -34,25 +35,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qxZ-Cu-k1I">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qxZ-Cu-k1I">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="72.5"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRQ-qe-dok">
+                                                    <rect key="frame" x="78" y="47" width="265" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1R-en-57A">
                                                     <rect key="frame" x="78" y="8" width="122" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRQ-qe-dok">
-                                                    <rect key="frame" x="78" y="47" width="265" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="aRQ-qe-dok" firstAttribute="centerY" secondItem="FPa-f1-z7U" secondAttribute="centerY" id="SQF-as-dE8"/>
-                                                <constraint firstItem="m1R-en-57A" firstAttribute="centerY" secondItem="FPa-f1-z7U" secondAttribute="centerY" id="Yoq-KT-cOq"/>
+                                                <constraint firstItem="m1R-en-57A" firstAttribute="leading" secondItem="qxZ-Cu-k1I" secondAttribute="trailing" constant="8" id="48L-h0-DmL"/>
+                                                <constraint firstItem="aRQ-qe-dok" firstAttribute="top" secondItem="m1R-en-57A" secondAttribute="bottom" constant="18" id="Cga-xJ-q1U"/>
+                                                <constraint firstItem="aRQ-qe-dok" firstAttribute="leading" secondItem="qxZ-Cu-k1I" secondAttribute="trailing" constant="8" id="Rlq-Oo-9r5"/>
+                                                <constraint firstItem="m1R-en-57A" firstAttribute="top" secondItem="FPa-f1-z7U" secondAttribute="topMargin" id="Vrs-YD-ncV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -71,10 +74,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6qM-l2-tKW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="2h9-as-lWw"/>
+                            <constraint firstItem="6A2-rB-6qx" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="4Mu-ad-jY3"/>
                             <constraint firstItem="6qM-l2-tKW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="6DQ-F7-a2h"/>
+                            <constraint firstItem="6A2-rB-6qx" firstAttribute="top" secondItem="6qM-l2-tKW" secondAttribute="bottom" constant="8" id="BPR-qB-CK7"/>
+                            <constraint firstItem="6A2-rB-6qx" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="bKc-Lv-GPV"/>
                             <constraint firstItem="6qM-l2-tKW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="gAu-7d-yyR"/>
                             <constraint firstItem="6qM-l2-tKW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="hbU-Yx-bud"/>
-                            <constraint firstItem="6A2-rB-6qx" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="qvE-4I-Ily"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="6A2-rB-6qx" secondAttribute="bottom" constant="8" id="nW1-Sr-fXh"/>
                             <constraint firstItem="6qM-l2-tKW" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="wRG-nV-JA0"/>
                         </constraints>
                     </view>

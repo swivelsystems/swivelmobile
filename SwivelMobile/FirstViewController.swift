@@ -32,7 +32,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
                 //print(response)
                 self.students = JSON(data: data!)
                 self.table_refresh()
-                print("the first reference", self.students![0]["name"]["first"].string)
+                //print("the first reference", self.students![0]["name"]["first"].string)
                 //print(error)
         }
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,6 +49,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
+        cell.photo.image = UIImage(named:"Haomeme")
         cell.name?.text = students?[indexPath.row]["name"]["first"].string!
         cell.email?.text = students?[indexPath.row]["email"].string!
         return cell
