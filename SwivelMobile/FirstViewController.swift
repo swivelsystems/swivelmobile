@@ -10,16 +10,30 @@ import UIKit
 import Alamofire
 
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    //Table Rendering
+    @IBOutlet weak var tableView: UITableView!
+
+    var students: JSON?
+
+    func table_refresh() {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+            return
+        })
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Alamofire.request(.GET,"http://localhost:3000/teachers")
+
+        Alamofire.request(.GET,"http://localhost:3000/students")
             .response { (request, response, data, error) in
-                print(response)
-                print(JSON(data: data!))
-                print(error)
+                //print(response)
+                self.students = JSON(data: data!)
+                self.table_refresh()
+                //print("the first reference", self.students![0]["name"]["first"].string)
+                //print(error)
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -29,7 +43,17 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-  
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
+        cell.photo.image = UIImage(named:"Haomeme")
+        cell.name?.text = students?[indexPath.row]["name"]["first"].string!
+        cell.email?.text = students?[indexPath.row]["email"].string!
+        return cell
+    }
 
 }
 
