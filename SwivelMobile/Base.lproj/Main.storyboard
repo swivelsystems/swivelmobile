@@ -9,7 +9,7 @@
         <!--Announcements-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="SwivelMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="AnnouncementViewController" customModule="SwivelMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -28,7 +28,7 @@
                                 <rect key="frame" x="20" y="57" width="560" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="81" id="XlJ-f2-FqN" customClass="CustomCell" customModule="SwivelMobile" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="81" id="XlJ-f2-FqN" customClass="AnnouncementCell" customModule="SwivelMobile" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XlJ-f2-FqN" id="FPa-f1-z7U">
@@ -96,7 +96,16 @@
         <!--Due Dates-->
         <scene sceneID="MRP-XY-cjb">
             <objects>
-                <viewController id="Fcl-Sm-cKk" sceneMemberID="viewController">
+                <viewController id="Fcl-Sm-cKk" customClass="DatesViewController" customModule="SwivelMobile" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gdq-kf-dt6"/>
+                        <viewControllerLayoutGuide type="bottom" id="OLU-Ld-v63"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AEo-RL-e4v">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <tabBarItem key="tabBarItem" title="Due Dates" image="due_date_tab_icon" selectedImage="due_date_tab_icon" id="GjO-nd-P08"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqL-KI-28B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,7 +115,7 @@
         <!--Grades-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="SwivelMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="GradesViewController" customModule="SwivelMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>

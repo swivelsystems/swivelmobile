@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 
-class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AnnouncementViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //Table Rendering
     @IBOutlet weak var tableView: UITableView!
@@ -48,7 +48,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! AnnouncementCell
         cell.photo.image = UIImage(named:"Haomeme")
         cell.name?.text = students?[indexPath.row]["name"]["first"].string!
         cell.email?.text = students?[indexPath.row]["email"].string!
