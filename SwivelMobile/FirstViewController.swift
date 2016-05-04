@@ -14,15 +14,18 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     //Table Rendering
     @IBOutlet weak var tableView: UITableView!
+    
+    var students: JSON?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Alamofire.request(.GET,"http://localhost:3000/teachers")
+        Alamofire.request(.GET,"http://localhost:3000/students")
             .response { (request, response, data, error) in
-                print(response)
-                self.display.text = JSON(data: data!)[0]["name"].string
-                print(error)
+                //print(response)
+                self.students = JSON(data: data!)
+                print("the first reference", self.students![0]["name"]["first"].string)
+                //print(error)
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -32,12 +35,16 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> {
-        return 3
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
+        print(students)
+        //cell.name.text = students![indexPath.row]["name"]["first"].string
+        //cell.email.text = students![indexPath.row]["email"].string
+        return cell
     }
 
 

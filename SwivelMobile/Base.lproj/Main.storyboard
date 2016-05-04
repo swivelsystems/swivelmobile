@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Announcements-->
@@ -18,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Announcements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qM-l2-tKW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Announcements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qM-l2-tKW">
                                 <rect key="frame" x="202" y="28" width="196" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -69,10 +68,8 @@
                         <constraints>
                             <constraint firstItem="6qM-l2-tKW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="2h9-as-lWw"/>
                             <constraint firstItem="6qM-l2-tKW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="6DQ-F7-a2h"/>
-                            <constraint firstItem="6qM-l2-tKW" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="182" id="cIh-6a-VO1"/>
                             <constraint firstItem="6qM-l2-tKW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="gAu-7d-yyR"/>
                             <constraint firstItem="6qM-l2-tKW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="hbU-Yx-bud"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6qM-l2-tKW" secondAttribute="trailing" constant="182" id="wV6-5r-xxU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Announcements" image="feed_icon" selectedImage="feed_icon" id="acW-dT-cKf"/>
