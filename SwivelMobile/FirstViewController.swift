@@ -14,9 +14,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     //Table Rendering
     @IBOutlet weak var tableView: UITableView!
-    
+
     var students: JSON?
-    
+
     func table_refresh() {
         dispatch_async(dispatch_get_main_queue(), {
             self.tableView.reloadData()
@@ -54,7 +54,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.email?.text = students?[indexPath.row]["email"].string!
         return cell
     }
-
 
 }
 
