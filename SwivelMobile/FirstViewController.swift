@@ -16,6 +16,13 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     var students: JSON?
+    
+    func table_refresh() {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+            return
+        })
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +31,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
             .response { (request, response, data, error) in
                 //print(response)
                 self.students = JSON(data: data!)
+                self.table_refresh()
                 print("the first reference", self.students![0]["name"]["first"].string)
                 //print(error)
         }
@@ -36,14 +44,13 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
-        print(students)
-        //cell.name.text = students![indexPath.row]["name"]["first"].string
-        //cell.email.text = students![indexPath.row]["email"].string
+        cell.name?.text = students?[indexPath.row]["name"]["first"].string!
+        cell.email?.text = students?[indexPath.row]["email"].string!
         return cell
     }
 
