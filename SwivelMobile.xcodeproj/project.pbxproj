@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA4064171CDA6BED00116BA8 /* DatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4064161CDA6BED00116BA8 /* DatesViewController.swift */; };
+		AA4064191CDA770B00116BA8 /* DatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4064181CDA770B00116BA8 /* DatesCell.swift */; };
 		AAAA25821CD53C6A0096D0A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA25811CD53C6A0096D0A1 /* AppDelegate.swift */; };
 		AAAA25841CD53C6A0096D0A1 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA25831CD53C6A0096D0A1 /* AnnouncementViewController.swift */; };
 		AAAA25861CD53C6A0096D0A1 /* GradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA25851CD53C6A0096D0A1 /* GradesViewController.swift */; };
@@ -112,6 +113,7 @@
 
 /* Begin PBXFileReference section */
 		AA4064161CDA6BED00116BA8 /* DatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatesViewController.swift; path = ../DatesViewController.swift; sourceTree = "<group>"; };
+		AA4064181CDA770B00116BA8 /* DatesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesCell.swift; sourceTree = "<group>"; };
 		AAAA257E1CD53C6A0096D0A1 /* SwivelMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwivelMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAAA25811CD53C6A0096D0A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAAA25831CD53C6A0096D0A1 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				AAAA25811CD53C6A0096D0A1 /* AppDelegate.swift */,
 				AAAA25831CD53C6A0096D0A1 /* AnnouncementViewController.swift */,
 				AAFC4A651CD98F3C0009150C /* AnnouncementCell.swift */,
+				AA4064181CDA770B00116BA8 /* DatesCell.swift */,
 				AA4064161CDA6BED00116BA8 /* DatesViewController.swift */,
 				AAAA25851CD53C6A0096D0A1 /* GradesViewController.swift */,
 				AAC232D01CD928D9005AAE42 /* serverAPI.swift */,
@@ -440,6 +443,7 @@
 				AAC232D11CD928D9005AAE42 /* serverAPI.swift in Sources */,
 				AAAA25861CD53C6A0096D0A1 /* GradesViewController.swift in Sources */,
 				AAAA25821CD53C6A0096D0A1 /* AppDelegate.swift in Sources */,
+				AA4064191CDA770B00116BA8 /* DatesCell.swift in Sources */,
 				AAAA25841CD53C6A0096D0A1 /* AnnouncementViewController.swift in Sources */,
 				AA4064171CDA6BED00116BA8 /* DatesViewController.swift in Sources */,
 				AAFC4A661CD98F3C0009150C /* AnnouncementCell.swift in Sources */,

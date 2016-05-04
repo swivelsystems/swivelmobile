@@ -8,11 +8,35 @@
 
 import UIKit
 
-class DatesViewController: UIViewController {
+class DatesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    //views on the Screen
+    @IBOutlet weak var tableView: UITableView!
+    
+    var dates: JSON?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    
+    
+    //Table Rendering functions
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DatesCell
+        
+        cell.title?.text = "assignment"
+        cell.priority?.text = "urgent"
+        cell.dueDate?.text = "tomorrow"
+//        cell.photo.image = UIImage(named:"Haomeme")
+//        cell.name?.text = dates?[indexPath.row]["name"]["first"].string!
+//        cell.email?.text = dates?[indexPath.row]["email"].string!
+        return cell
     }
     
 }
