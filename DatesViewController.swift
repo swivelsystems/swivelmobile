@@ -33,9 +33,6 @@ class DatesViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.title?.text = "assignment"
         cell.priority?.text = "urgent"
         cell.dueDate?.text = "tomorrow"
-//        cell.photo.image = UIImage(named:"Haomeme")
-//        cell.name?.text = dates?[indexPath.row]["name"]["first"].string!
-//        cell.email?.text = dates?[indexPath.row]["email"].string!
         return cell
     }
     

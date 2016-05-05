@@ -10,18 +10,34 @@ import UIKit
 
 class GradesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    //Temp Variables 
+    
+    var grade = 85.0;
+    
+    //Initial Loads
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        changeCircle(newAngle(grade))
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func newAngle(grade: Double) -> Double {
+     return grade/100 * 360
+    }
+    
+    func changeCircle(newAngle: Double) {
+        circularOverallGrade.animateToAngle(newAngle, duration: 1, completion: nil)
+    }
+    
+    //View Rendering
+
+    //Circle Rendering
+    @IBOutlet weak var circularOverallGrade: KDCircularProgress!
+    
     //Table Rendering
     @IBOutlet weak var tableView: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     //Table Rendering functions
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

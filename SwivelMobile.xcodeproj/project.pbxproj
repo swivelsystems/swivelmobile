@@ -10,6 +10,7 @@
 		AA4064171CDA6BED00116BA8 /* DatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4064161CDA6BED00116BA8 /* DatesViewController.swift */; };
 		AA4064191CDA770B00116BA8 /* DatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4064181CDA770B00116BA8 /* DatesCell.swift */; };
 		AA40641B1CDAC9AE00116BA8 /* GradesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40641A1CDAC9AE00116BA8 /* GradesCell.swift */; };
+		AA997FC21CDBD5F20082B6C2 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA997FC11CDBD5F20082B6C2 /* KDCircularProgress.swift */; };
 		AAAA25821CD53C6A0096D0A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA25811CD53C6A0096D0A1 /* AppDelegate.swift */; };
 		AAAA25841CD53C6A0096D0A1 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA25831CD53C6A0096D0A1 /* AnnouncementViewController.swift */; };
 		AAAA25861CD53C6A0096D0A1 /* GradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA25851CD53C6A0096D0A1 /* GradesViewController.swift */; };
@@ -116,6 +117,7 @@
 		AA4064161CDA6BED00116BA8 /* DatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatesViewController.swift; path = ../DatesViewController.swift; sourceTree = "<group>"; };
 		AA4064181CDA770B00116BA8 /* DatesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesCell.swift; sourceTree = "<group>"; };
 		AA40641A1CDAC9AE00116BA8 /* GradesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesCell.swift; sourceTree = "<group>"; };
+		AA997FC11CDBD5F20082B6C2 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KDCircularProgress.swift; path = "../../../Downloads/KDCircularProgress-master/KDCircularProgress/KDCircularProgress.swift"; sourceTree = "<group>"; };
 		AAAA257E1CD53C6A0096D0A1 /* SwivelMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwivelMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAAA25811CD53C6A0096D0A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAAA25831CD53C6A0096D0A1 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		AAC232B21CD9231A005AAE42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AA997FC11CDBD5F20082B6C2 /* KDCircularProgress.swift */,
 				AAAA258C1CD53C6A0096D0A1 /* LaunchScreen.storyboard */,
 				AAAA25871CD53C6A0096D0A1 /* Main.storyboard */,
 				AAAA258A1CD53C6A0096D0A1 /* Assets.xcassets */,
@@ -449,6 +452,7 @@
 				AA4064191CDA770B00116BA8 /* DatesCell.swift in Sources */,
 				AAAA25841CD53C6A0096D0A1 /* AnnouncementViewController.swift in Sources */,
 				AA40641B1CDAC9AE00116BA8 /* GradesCell.swift in Sources */,
+				AA997FC21CDBD5F20082B6C2 /* KDCircularProgress.swift in Sources */,
 				AA4064171CDA6BED00116BA8 /* DatesViewController.swift in Sources */,
 				AAFC4A661CD98F3C0009150C /* AnnouncementCell.swift in Sources */,
 				AAC232AE1CD92250005AAE42 /* SwiftyJSON.swift in Sources */,
