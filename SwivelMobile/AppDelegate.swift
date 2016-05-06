@@ -16,27 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        print("loading stuff")
-        
-//        class Package {
-//            static var sharedInstance = Package()
-//            var data: JSON?
-//            private init() {}
-//        }
-    
-        
-            Alamofire.request(.GET,"http://localhost:3000/students")
-                .response { (request, response, data, error) in
-                    Package.sharedInstance.data = JSON(data: data!)
-                    //print(Package.sharedInstance.data)
-                    //print("Done")
-                }
-    
-        //make ajax call here
-        
 
-        
-        // Override point for customization after application launch.
+        //Loading the data into Singleton
+        // Alamofire.request(.GET,"http://localhost:3000/students")
+        //     .response { (request, response, data, error) in
+        //         Package.sharedInstance.data = JSON(data: data!)
+        //     }
+
+        Package.sharedInstance.update()
+
+        //Loading Complete and Enter application
         return true
     }
 
@@ -55,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        
+
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

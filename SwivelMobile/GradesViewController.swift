@@ -11,11 +11,12 @@ import CoreData
 
 class GradesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    //Temp Variables 
-    
-    var grade = 85.0
 
-    
+    //Elements on Screen
+    @IBOutlet weak var textGrade: UILabel!
+    @IBOutlet weak var circularOverallGrade: KDCircularProgress!
+    @IBOutlet weak var tableView: UITableView!
+
     //Initial Loads
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,42 +24,41 @@ class GradesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         refreshControl.addTarget(self, action: "refreshGrades:", forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl)
-        //changeGrade(grade)
+
     }
-    
+
+    //Load on each switch into view
     override func viewWillAppear(animated: Bool) {
         changeGrade(grade)
         super.viewWillAppear(animated)
     }
-    
+
+
+
+    //Local Variables
+    var grade = 85.0
+
+    //Functions
     func refreshGrades(refreshControl: UIRefreshControl) {
+        Package.sharedInstance.update()
+        //Table refresh
         print("Grades Refreshed")
         refreshControl.endRefreshing()
     }
-    
+
+
     func newAngle(grade: Double) -> Double {
      return grade/100 * 360
     }
-    
+
     func changeGrade(newGrade: Double) {
         let angle = newAngle(newGrade)
         circularOverallGrade.animateFromAngle(0, toAngle: angle, duration: 1, completion: nil)
        // circularOverallGrade.animateFromAngle(angle, duration: 1, completion: nil)
         textGrade.text = String(newGrade) + " %"
     }
-    
-    //View Rendering
-    @IBOutlet weak var textGrade: UILabel!
 
-    //Circle Rendering
-    @IBOutlet weak var circularOverallGrade: KDCircularProgress!
-    
-    //Table Rendering
-    @IBOutlet weak var tableView: UITableView!
-
-
-
-    //Table Rendering functions
+    //Table Specfications
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
@@ -69,10 +69,6 @@ class GradesViewController: UIViewController, UITableViewDataSource, UITableView
           cell.teacher?.text = "MRS. Vickies"
           cell.average?.text = "75%"
           cell.grade?.text = "84%"
-//            cell.course?.text = "Computer Science 101"
-//            cell.teacher?.text = "Mrs. AppleBees"
-//            //cell.studentAverage?.text = "75%"
-//            cell.grade?.text = "87%"
         return cell
     }
 
