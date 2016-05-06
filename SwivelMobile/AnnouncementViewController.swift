@@ -29,20 +29,20 @@ class AnnouncementViewController: UIViewController, UITableViewDataSource, UITab
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Package.sharedInstance.data)
         let refreshControl = UIRefreshControl()
         tableView.dataSource = self
         refreshControl.addTarget(self, action: "refreshAnnouncements:", forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl)
-        print(package.students)
 
-        Alamofire.request(.GET,"http://localhost:3000/students/:" + studentId)
-            .response { (request, response, data, error) in
-                struct package {
-                    
-                }
-                self.students = JSON(data: data!)
-                self.table_refresh()
-        }
+//        Alamofire.request(.GET,"http://localhost:3000/students/:" + studentId)
+//            .response { (request, response, data, error) in
+//                struct package {
+//                    
+//                }
+//                self.students = JSON(data: data!)
+//                self.table_refresh()
+//        }
     }
     
     func refreshAnnouncements(refreshControl: UIRefreshControl) {

@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct package {
-    static var students = "Jon"
-    var dates: JSON?
-    var announcements: JSON?
-    var grades : JSON?
+class Package {
+    static var sharedInstance = Package()
+    var something = "the thing"
+    var data: JSON?
+    private init() {}
 }

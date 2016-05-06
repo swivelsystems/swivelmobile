@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         print("loading stuff")
+        
+//        class Package {
+//            static var sharedInstance = Package()
+//            var data: JSON?
+//            private init() {}
+//        }
+    
+        
+            Alamofire.request(.GET,"http://localhost:3000/students")
+                .response { (request, response, data, error) in
+                    Package.sharedInstance.data = JSON(data: data!)
+                    //print(Package.sharedInstance.data)
+                    //print("Done")
+                }
+    
+        //make ajax call here
+        
+
+        
         // Override point for customization after application launch.
         return true
     }
