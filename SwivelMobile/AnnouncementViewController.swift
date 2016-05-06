@@ -8,12 +8,15 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 
 class AnnouncementViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //Table Rendering
     @IBOutlet weak var tableView: UITableView!
+    
+    var studentId = "1234"
 
     var students: JSON?
 
@@ -26,16 +29,25 @@ class AnnouncementViewController: UIViewController, UITableViewDataSource, UITab
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let refreshControl = UIRefreshControl()
+        tableView.dataSource = self
+        refreshControl.addTarget(self, action: "refreshAnnouncements:", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl)
+        print(package.students)
 
-        Alamofire.request(.GET,"http://localhost:3000/students")
+        Alamofire.request(.GET,"http://localhost:3000/students/:" + studentId)
             .response { (request, response, data, error) in
-                //print(response)
+                struct package {
+                    
+                }
                 self.students = JSON(data: data!)
                 self.table_refresh()
-                //print("the first reference", self.students![0]["name"]["first"].string)
-                //print(error)
         }
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func refreshAnnouncements(refreshControl: UIRefreshControl) {
+        print("refresh announcements")
+        refreshControl.endRefreshing()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,8 +62,8 @@ class AnnouncementViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! AnnouncementCell
         cell.photo.image = UIImage(named:"Haomeme")
-        cell.name?.text = students?[indexPath.row]["name"]["first"].string!
-        cell.email?.text = students?[indexPath.row]["email"].string!
+        //cell.name?.text = students?[indexPath.row]["name"]["first"].string!
+        //cell.email?.text = students?[indexPath.row]["email"].string!
         return cell
     }
 

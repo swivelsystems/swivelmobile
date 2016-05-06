@@ -7,29 +7,48 @@
 //
 
 import UIKit
+import CoreData
 
 class GradesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //Temp Variables 
     
-    var grade = 85.0;
+    var grade = 85.0
+
     
     //Initial Loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        changeCircle(newAngle(grade))
-        // Do any additional setup after loading the view, typically from a nib.
+        let refreshControl = UIRefreshControl()
+        tableView.dataSource = self
+        refreshControl.addTarget(self, action: "refreshGrades:", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl)
+        //changeGrade(grade)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        changeGrade(grade)
+        super.viewWillAppear(animated)
+    }
+    
+    func refreshGrades(refreshControl: UIRefreshControl) {
+        print("Grades Refreshed")
+        refreshControl.endRefreshing()
     }
     
     func newAngle(grade: Double) -> Double {
      return grade/100 * 360
     }
     
-    func changeCircle(newAngle: Double) {
-        circularOverallGrade.animateToAngle(newAngle, duration: 1, completion: nil)
+    func changeGrade(newGrade: Double) {
+        let angle = newAngle(newGrade)
+        circularOverallGrade.animateFromAngle(0, toAngle: angle, duration: 1, completion: nil)
+       // circularOverallGrade.animateFromAngle(angle, duration: 1, completion: nil)
+        textGrade.text = String(newGrade) + " %"
     }
     
     //View Rendering
+    @IBOutlet weak var textGrade: UILabel!
 
     //Circle Rendering
     @IBOutlet weak var circularOverallGrade: KDCircularProgress!
@@ -56,7 +75,6 @@ class GradesViewController: UIViewController, UITableViewDataSource, UITableView
 //            cell.grade?.text = "87%"
         return cell
     }
-
 
 }
 

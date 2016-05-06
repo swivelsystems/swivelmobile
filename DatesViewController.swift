@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DatesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -17,10 +18,17 @@ class DatesViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let refreshControl = UIRefreshControl()
+        tableView.dataSource = self
+        refreshControl.addTarget(self, action: "refreshDates:", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     
+    func refreshDates(refreshControl: UIRefreshControl) {
+        print("refresh Dates")
+        refreshControl.endRefreshing()
+    }
     
     //Table Rendering functions
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,7 +37,6 @@ class DatesViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DatesCell
-        
         cell.title?.text = "assignment"
         cell.priority?.text = "urgent"
         cell.dueDate?.text = "tomorrow"
