@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCell: UITableViewCell {
+class AnnouncementCell: UITableViewCell {
 
     //Display Image
     @IBOutlet weak var photo: UIImageView!
