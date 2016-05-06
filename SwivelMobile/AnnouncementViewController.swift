@@ -8,25 +8,13 @@
 
 import UIKit
 import Alamofire
-import CoreData
-
 
 class AnnouncementViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    //Table Rendering
+    //Elemets on the Screen
     @IBOutlet weak var tableView: UITableView!
-    
-    var studentId = "1234"
 
-    var students: JSON?
-
-    func table_refresh() {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.tableView.reloadData()
-            return
-        })
-    }
-
+    //First Load
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Package.sharedInstance.data)
@@ -34,27 +22,32 @@ class AnnouncementViewController: UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         refreshControl.addTarget(self, action: "refreshAnnouncements:", forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl)
-
-//        Alamofire.request(.GET,"http://localhost:3000/students/:" + studentId)
-//            .response { (request, response, data, error) in
-//                struct package {
-//                    
-//                }
-//                self.students = JSON(data: data!)
-//                self.table_refresh()
-//        }
     }
-    
+
+    //Load on each switch into view
+    override func viewWillAppear(animated: Bool) {
+
+    }
+
+    //Local variables
+    var students: JSON?
+
+    //Functions
+    func table_refresh() {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+            return
+        })
+    }
+
     func refreshAnnouncements(refreshControl: UIRefreshControl) {
+        Package.sharedInstance.update()
+        table_refresh()
         print("refresh announcements")
         refreshControl.endRefreshing()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    //Table Specifications
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
