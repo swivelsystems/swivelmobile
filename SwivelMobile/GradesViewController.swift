@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import CoreData
 
 class GradesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
 
     //Elements on Screen
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var textGrade: UILabel!
     @IBOutlet weak var circularOverallGrade: KDCircularProgress!
     @IBOutlet weak var tableView: UITableView!
@@ -20,9 +20,16 @@ class GradesViewController: UIViewController, UITableViewDataSource, UITableView
     //Initial Loads
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
         let refreshControl = UIRefreshControl()
         tableView.dataSource = self
-        refreshControl.addTarget(self, action: "refreshGrades:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: #selector(GradesViewController.refreshGrades(_:)), forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl)
 
     }

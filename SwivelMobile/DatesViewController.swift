@@ -11,14 +11,22 @@ import UIKit
 class DatesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //Elements on the Screen
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
 
     //Load on first render (will only load once)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if revealViewController() != nil {
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
         let refreshControl = UIRefreshControl()
         tableView.dataSource = self
-        refreshControl.addTarget(self, action: "refreshDates:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: #selector(DatesViewController.refreshDates(_:)), forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl)
     }
 

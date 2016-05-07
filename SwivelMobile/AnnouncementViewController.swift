@@ -7,21 +7,28 @@
 //
 
 import UIKit
-import Alamofire
 
 class AnnouncementViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //Elemets on the Screen
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var menuButton: UIBarButtonItem!
 
     //First Load
     override func viewDidLoad() {
-        super.viewDidLoad()
-        print(Package.sharedInstance.data)
-        let refreshControl = UIRefreshControl()
-        tableView.dataSource = self
-        refreshControl.addTarget(self, action: "refreshAnnouncements:", forControlEvents: UIControlEvents.ValueChanged)
-        tableView.addSubview(refreshControl)
+        super.viewDidLoad()                         //Check view load
+       
+        if revealViewController() != nil {
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+
+        //Refresh Controller
+        let refreshControl = UIRefreshControl()     //Link-up
+        tableView.dataSource = self                 //Connect Data-Source
+        refreshControl.addTarget(self, action: #selector(AnnouncementViewController.refreshAnnouncements(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl)        //
     }
 
     //Load on each switch into view
