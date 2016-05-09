@@ -13,12 +13,18 @@ class AnnouncementViewController: UIViewController, UITableViewDataSource, UITab
     //Elemets on the Screen
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var menuButton: UIBarButtonItem!
+    @IBOutlet weak var chatButton: UIBarButtonItem!
 
     //First Load
     override func viewDidLoad() {
         super.viewDidLoad()                         //Check view load
        
         if revealViewController() != nil {
+            
+            revealViewController().rightViewRevealWidth = 300
+            chatButton.target = revealViewController()
+            chatButton.action = "rightRevealToggle:"
+            
             menuButton.target = revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())

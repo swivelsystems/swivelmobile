@@ -13,6 +13,7 @@ class GradesViewController: UIViewController, UITableViewDataSource, UITableView
 
     //Elements on Screen
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var chatButton: UIBarButtonItem!
     @IBOutlet weak var textGrade: UILabel!
     @IBOutlet weak var circularOverallGrade: KDCircularProgress!
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +23,10 @@ class GradesViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         
         if self.revealViewController() != nil {
+            revealViewController().rightViewRevealWidth = 300
+            chatButton.target = revealViewController()
+            chatButton.action = "rightRevealToggle:"
+            
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
