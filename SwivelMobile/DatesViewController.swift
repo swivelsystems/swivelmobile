@@ -9,6 +9,7 @@
 import UIKit
 
 class DatesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var chatButton: UIBarButtonItem!
 
     //Elements on the Screen
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -19,8 +20,14 @@ class DatesViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         
         if revealViewController() != nil {
+            
+            revealViewController().rightViewRevealWidth = 300
+            chatButton.target = revealViewController()
+            chatButton.action = "rightRevealToggle:"
+            
             menuButton.target = revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
