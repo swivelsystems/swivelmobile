@@ -16,8 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        //Styling
+        let attrs = [
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "Roboto-Bold", size: 18)!
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = attrs
+        UINavigationBar.appearance().barTintColor = UIColor(red: 33.0/255.0, green: 100.0/255.0, blue: 255/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        
 
-        //Loading the data into Singleton
+        //Loading the data into Singleton //uncomment to connect to server 
         // Alamofire.request(.GET,"http://localhost:3000/students")
         //     .response { (request, response, data, error) in
         //         Package.sharedInstance.data = JSON(data: data!)
@@ -44,12 +55,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        //Connect Socket
+        SocketIOManager.sharedInstance.establishConnection()
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        //Disconnect Socket
+        SocketIOManager.sharedInstance.closeConnection()
     }
 
 
