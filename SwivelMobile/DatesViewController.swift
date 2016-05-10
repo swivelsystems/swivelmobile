@@ -9,15 +9,19 @@
 import UIKit
 
 class DatesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var chatButton: UIBarButtonItem!
+    
+    //Styling
 
     //Elements on the Screen
+    @IBOutlet weak var chatButton: UIBarButtonItem!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
 
     //Load on first render (will only load once)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Styling
         
         if revealViewController() != nil {
             
