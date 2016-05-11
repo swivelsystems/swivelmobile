@@ -15,16 +15,22 @@ class AnnouncementViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet var menuButton: UIBarButtonItem!
     @IBOutlet weak var chatButton: UIBarButtonItem!
 
+    //Temp variables
+    var announcements: [[String]]? = []
+
     //First Load
     override func viewDidLoad() {
-        super.viewDidLoad()                         //Check view load
-       
+        //View Did Load
+        super.viewDidLoad()
+
+        announcements = Package.sharedInstance.announcements
+
         if revealViewController() != nil {
-            
+
             revealViewController().rightViewRevealWidth = 300
             chatButton.target = revealViewController()
             chatButton.action = "rightRevealToggle:"
-            
+
             menuButton.target = revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -62,14 +68,14 @@ class AnnouncementViewController: UIViewController, UITableViewDataSource, UITab
 
     //Table Specifications
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.announcements!.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! AnnouncementCell
-        cell.photo.image = UIImage(named:"Haomeme")
-        //cell.name?.text = students?[indexPath.row]["name"]["first"].string!
-        //cell.email?.text = students?[indexPath.row]["email"].string!
+
+        cell.title?.text = String(self.announcements![indexPath.row][0])
+        cell.body?.text = String(self.announcements![indexPath.row][1])
         return cell
     }
 

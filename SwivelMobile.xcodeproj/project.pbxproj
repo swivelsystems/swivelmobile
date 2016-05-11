@@ -204,7 +204,7 @@
 		AAC232B31CD927CC005AAE42 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		AAC232D01CD928D9005AAE42 /* serverAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serverAPI.swift; sourceTree = "<group>"; };
 		AAEDABDD1CE2A4DA00AEA4AB /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
-		AAEDABDF1CE2AA3F00AEA4AB /* MenuCourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCourseCell.swift; path = SwivelMobile/MenuCourseCell.swift; sourceTree = "<group>"; };
+		AAEDABDF1CE2AA3F00AEA4AB /* MenuCourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCourseCell.swift; sourceTree = "<group>"; };
 		AAFC4A651CD98F3C0009150C /* AnnouncementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,7 +247,6 @@
 		AAAA25751CD53C690096D0A1 = {
 			isa = PBXGroup;
 			children = (
-				AAEDABDF1CE2AA3F00AEA4AB /* MenuCourseCell.swift */,
 				AAAA25801CD53C6A0096D0A1 /* SwivelMobile */,
 				AAAA25971CD53C6A0096D0A1 /* SwivelMobileTests */,
 				AAAA25A21CD53C6A0096D0A1 /* SwivelMobileUITests */,
@@ -273,15 +272,16 @@
 				AAC232B21CD9231A005AAE42 /* Supporting Files */,
 				AAC232B01CD922F8005AAE42 /* Libraries */,
 				AAAA25811CD53C6A0096D0A1 /* AppDelegate.swift */,
+				AA4A6FA11CDBF9E400E32AE6 /* dataStruct.swift */,
+				AAAA25831CD53C6A0096D0A1 /* AnnouncementViewController.swift */,
+				AAAA25851CD53C6A0096D0A1 /* GradesViewController.swift */,
 				AA9EE2321CE1009A003470D8 /* DatesViewController.swift */,
 				AAEDABDD1CE2A4DA00AEA4AB /* MainMenuController.swift */,
 				AA64A5921CDDBCDB00C8F6DC /* MenuController.swift */,
-				AAAA25831CD53C6A0096D0A1 /* AnnouncementViewController.swift */,
-				AA4A6FA11CDBF9E400E32AE6 /* dataStruct.swift */,
 				AAFC4A651CD98F3C0009150C /* AnnouncementCell.swift */,
-				AA4064181CDA770B00116BA8 /* DatesCell.swift */,
-				AAAA25851CD53C6A0096D0A1 /* GradesViewController.swift */,
+				AAEDABDF1CE2AA3F00AEA4AB /* MenuCourseCell.swift */,
 				AA40641A1CDAC9AE00116BA8 /* GradesCell.swift */,
+				AA4064181CDA770B00116BA8 /* DatesCell.swift */,
 				AAC232D01CD928D9005AAE42 /* serverAPI.swift */,
 				AABC673F1CE1560D009950C8 /* SocketIOManager.swift */,
 			);

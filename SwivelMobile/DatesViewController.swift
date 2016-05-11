@@ -9,8 +9,11 @@
 import UIKit
 
 class DatesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
     //Styling
+
+    //Temporary Data
+
+    var assignments: [[String]]? = []
 
     //Elements on the Screen
     @IBOutlet weak var chatButton: UIBarButtonItem!
@@ -20,21 +23,22 @@ class DatesViewController: UIViewController, UITableViewDataSource, UITableViewD
     //Load on first render (will only load once)
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        assignments = Package.sharedInstance.assignments
         //Styling
-        
+
         if revealViewController() != nil {
-            
+
             revealViewController().rightViewRevealWidth = 300
             chatButton.target = revealViewController()
             chatButton.action = "rightRevealToggle:"
-            
+
             menuButton.target = revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            
+
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
+
         let refreshControl = UIRefreshControl()
         tableView.dataSource = self
         refreshControl.addTarget(self, action: #selector(DatesViewController.refreshDates(_:)), forControlEvents: UIControlEvents.ValueChanged)
@@ -60,14 +64,15 @@ class DatesViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     //Table Specifications
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return assignments!.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DatesCell
-        cell.title?.text = "assignment"
-        cell.priority?.text = "urgent"
-        cell.dueDate?.text = "tomorrow"
+        cell.title?.text = String(self.assignments![indexPath.row][0])
+        cell.course?.text = String(self.assignments![indexPath.row][3])
+        cell.weight?.text = String(self.assignments![indexPath.row][2]) + "%"
+        cell.dueDate?.text = String(self.assignments![indexPath.row][1])
         return cell
     }
 

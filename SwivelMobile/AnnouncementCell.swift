@@ -10,11 +10,7 @@ import UIKit
 
 class AnnouncementCell: UITableViewCell {
 
-    //Display Image
-    @IBOutlet weak var photo: UIImageView!
-    
-    @IBOutlet weak var name: UILabel!
-    
-    @IBOutlet weak var email: UILabel!
-    
+    @IBOutlet weak var title: UILabel!
+
+    @IBOutlet weak var body: UILabel!
 }
