@@ -8,6 +8,10 @@
 
 import UIKit
 
+//Alias
+let data = Package.sharedInstance
+var grade: Double? = data.average
+
 class GradesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
 
@@ -21,34 +25,33 @@ class GradesViewController: UIViewController, UITableViewDataSource, UITableView
     //Initial Loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if self.revealViewController() != nil {
             revealViewController().rightViewRevealWidth = 300
             chatButton.target = revealViewController()
             chatButton.action = "rightRevealToggle:"
-            
+
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
+
         let refreshControl = UIRefreshControl()
         tableView.dataSource = self
         refreshControl.addTarget(self, action: #selector(GradesViewController.refreshGrades(_:)), forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl)
-
     }
 
     //Load on each switch into view
     override func viewWillAppear(animated: Bool) {
-        changeGrade(grade)
+        changeGrade(grade!)
         super.viewWillAppear(animated)
     }
 
 
 
     //Local Variables
-    var grade = 85.0
+    //var grade = 85.0
 
     //Functions
     func refreshGrades(refreshControl: UIRefreshControl) {
@@ -67,20 +70,23 @@ class GradesViewController: UIViewController, UITableViewDataSource, UITableView
         let angle = newAngle(newGrade)
         circularOverallGrade.animateFromAngle(0, toAngle: angle, duration: 1, completion: nil)
        // circularOverallGrade.animateFromAngle(angle, duration: 1, completion: nil)
-        textGrade.text = String(newGrade) + " %"
+        textGrade.text = String(round(100*newGrade)/100) + " %"
     }
 
     //Table Specfications
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 10
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! GradesCell
-          cell.course?.text = "SOME COURSE"
-          cell.teacher?.text = "MRS. Vickies"
-          cell.average?.text = "75%"
-          cell.grade?.text = "84%"
+        if ((Package.sharedInstance.data?["courses"][indexPath.row]["name"])! != nil) {
+          cell.course?.text = data.courses[indexPath.row]
+          cell.grade?.text = String(data.grades[indexPath.row]) + "%"
+        } else {
+          cell.course?.text = ""
+          cell.grade?.text = ""
+        }
         return cell
     }
 

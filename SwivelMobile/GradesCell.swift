@@ -10,7 +10,5 @@ import UIKit
 
 class GradesCell: UITableViewCell {
     @IBOutlet weak var course: UILabel!
-    @IBOutlet weak var teacher: UILabel!
-    @IBOutlet weak var average: UILabel!
     @IBOutlet weak var grade: UILabel!
 }

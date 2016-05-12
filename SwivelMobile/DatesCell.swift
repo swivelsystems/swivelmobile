@@ -9,10 +9,9 @@
 import UIKit
 
 class DatesCell: UITableViewCell {
-
+    
     @IBOutlet weak var title: UILabel!
-    
-    @IBOutlet weak var priority: UILabel!
-    
+    @IBOutlet weak var course: UILabel!
+    @IBOutlet weak var weight: UILabel!
     @IBOutlet weak var dueDate: UILabel!
 }
