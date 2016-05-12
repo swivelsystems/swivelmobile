@@ -24,12 +24,13 @@ class AnnouncementViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
 
         announcements = Package.sharedInstance.announcements
+        self.tableView.separatorColor = UIColor(red:255.0/255.0, green:255.0/255.0, blue:255.0/255.0, alpha: 0.3)
 
         if revealViewController() != nil {
 
             revealViewController().rightViewRevealWidth = 300
             chatButton.target = revealViewController()
-            chatButton.action = "rightRevealToggle:"
+            chatButton.action = #selector(SWRevealViewController.rightRevealToggle(_:))
 
             menuButton.target = revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -76,6 +77,9 @@ class AnnouncementViewController: UIViewController, UITableViewDataSource, UITab
 
         cell.title?.text = String(self.announcements![indexPath.row][0])
         cell.body?.text = String(self.announcements![indexPath.row][1])
+        cell.card?.layer.borderWidth = 1
+        cell.card?.layer.borderColor = UIColor(red:218.0/255.0, green:226.0/255.0, blue:228.0/255.0, alpha: 1.0).CGColor
+        
         return cell
     }
 

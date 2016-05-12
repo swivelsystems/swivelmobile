@@ -10,7 +10,10 @@ import UIKit
 
 class AnnouncementCell: UITableViewCell {
 
+    @IBOutlet weak var card: UIView!
+    
     @IBOutlet weak var title: UILabel!
 
-    @IBOutlet weak var body: UILabel!
+    @IBOutlet weak var body: UITextView!
+    
 }

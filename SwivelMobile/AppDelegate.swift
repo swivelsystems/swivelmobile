@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSForegroundColorAttributeName : UIColor.whiteColor(),
             NSFontAttributeName : UIFont(name: "Roboto-Bold", size: 18)!
         ]
-
+    
         UINavigationBar.appearance().titleTextAttributes = attrs
-        UINavigationBar.appearance().barTintColor = UIColor(red: 33.0/255.0, green: 100.0/255.0, blue: 255/255.0, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 52.0/255.0, green: 152.0/255.0, blue: 219/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
 
 
