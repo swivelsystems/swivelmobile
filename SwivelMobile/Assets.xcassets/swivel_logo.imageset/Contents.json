@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Swivel_logo_tm.png",
+      "filename" : "swivel_logo.png",
       "scale" : "1x"
     },
     {
@@ -11,6 +11,7 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "swivel_logo-1.png",
       "scale" : "3x"
     }
   ],

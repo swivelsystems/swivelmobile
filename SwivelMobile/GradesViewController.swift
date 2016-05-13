@@ -16,6 +16,8 @@ class GradesViewController: UIViewController, UITableViewDataSource, UITableView
 
 
     //Elements on Screen
+    
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var chatButton: UIBarButtonItem!
     @IBOutlet weak var textGrade: UILabel!
@@ -25,11 +27,11 @@ class GradesViewController: UIViewController, UITableViewDataSource, UITableView
     //Initial Loads
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if self.revealViewController() != nil {
             revealViewController().rightViewRevealWidth = 300
             chatButton.target = revealViewController()
-            chatButton.action = "rightRevealToggle:"
+            chatButton.action = #selector(SWRevealViewController.rightRevealToggle(_:))
 
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))

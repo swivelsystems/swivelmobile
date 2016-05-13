@@ -31,7 +31,7 @@ class DatesViewController: UIViewController, UITableViewDataSource, UITableViewD
 
             revealViewController().rightViewRevealWidth = 300
             chatButton.target = revealViewController()
-            chatButton.action = "rightRevealToggle:"
+            chatButton.action = #selector(SWRevealViewController.rightRevealToggle(_:))
 
             menuButton.target = revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -69,10 +69,15 @@ class DatesViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DatesCell
+        let dateString = String(self.assignments![indexPath.row][1])
+        let index10 = dateString.startIndex.advancedBy(10)
+            
         cell.title?.text = String(self.assignments![indexPath.row][0])
         cell.course?.text = String(self.assignments![indexPath.row][3])
-        cell.weight?.text = String(self.assignments![indexPath.row][2]) + "%"
-        cell.dueDate?.text = String(self.assignments![indexPath.row][1])
+        cell.weight?.text = "Weight: " + String(self.assignments![indexPath.row][2]) + "%"
+        cell.dueDate?.text = "Due: " + dateString.substringToIndex(index10)
+        cell.card?.layer.borderWidth = 1
+        cell.card?.layer.borderColor = UIColor(red:218.0/255.0, green:226.0/255.0, blue:228.0/255.0, alpha: 1.0).CGColor
         return cell
     }
 

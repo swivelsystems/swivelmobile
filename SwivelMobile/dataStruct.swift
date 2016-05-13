@@ -17,9 +17,9 @@ class Package {
 
     //JSON DATA
     var data: JSON?
-    var url = "http://52.38.194.99/api/"
+    var url = "http://swivelsystems.org/api/" //"http://52.39.216.194/"
     var type = "students"
-    var id = 2
+    var id = 30
     var courses: [String] = []
     var grades: [Int] = []
     var average: Double? = 0

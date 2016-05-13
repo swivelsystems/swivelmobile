@@ -10,6 +10,7 @@ import UIKit
 
 class DatesCell: UITableViewCell {
     
+    @IBOutlet weak var card: UIView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var course: UILabel!
     @IBOutlet weak var weight: UILabel!

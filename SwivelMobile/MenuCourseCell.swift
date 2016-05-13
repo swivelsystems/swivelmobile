@@ -10,6 +10,5 @@ import UIKit
 
 class MenuCourseCell: UITableViewCell {
 
-    @IBOutlet weak var courseIcon: UIImageView!
     @IBOutlet weak var courseTitle: UILabel!
 }
