@@ -17,7 +17,7 @@ class Package {
 
     //JSON DATA
     var data: JSON?
-    var url = "http://swivelsystems.org/api/" //"http://52.39.216.194/"
+    var url = "http://localhost:8080/api/" //"http://52.39.216.194/"
     var type = "students"
     var id = 30
     var courses: [String] = []
@@ -78,8 +78,6 @@ class Package {
                 self.calculateAverage()
                 self.arrayifyAnnouncements()
                 self.arrayifyAssignments()
-
-                print(self.assignments)
             }
 
     }

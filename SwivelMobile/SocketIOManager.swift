@@ -12,7 +12,7 @@ class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
     
     //connect to the website
-    var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: "http://192.168.1.XXX:3000")!)
+    var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: "http://localhost:8080")!)
     
     //connection
     func establishConnection() {
