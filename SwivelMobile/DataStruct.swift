@@ -17,7 +17,8 @@ class Package {
 
     //JSON DATA
     var data: JSON?
-    var url = "http://localhost:8080/api/" //"http://52.39.216.194/"
+    var username = "Joel"
+    var url = "http://swivelsystems.org/api/"
     var type = "students"
     var id = 30
     var courses: [String] = []

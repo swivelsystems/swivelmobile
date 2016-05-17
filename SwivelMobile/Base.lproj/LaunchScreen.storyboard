@@ -55,6 +55,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="swivel_logo" width="75" height="75"/>
+        <image name="swivel_logo" width="50" height="50"/>
     </resources>
 </document>

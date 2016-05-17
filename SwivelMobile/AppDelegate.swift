@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        //Make Things White
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
 
         //Styling
         let attrs = [

@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "swivel_logo-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "swivel_logo.png",
       "scale" : "2x"
     },
     {
