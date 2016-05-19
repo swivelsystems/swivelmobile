@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA1C03D31CEBD89C001C7964 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C03D21CEBD89C001C7964 /* ChatViewController.swift */; };
+		AA1C03DB1CEBDD0A001C7964 /* ChatMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C03DA1CEBDD0A001C7964 /* ChatMenuViewController.swift */; };
+		AA1C03DD1CEBDDE8001C7964 /* ChatMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C03DC1CEBDDE8001C7964 /* ChatMenuCell.swift */; };
+		AA1C03DF1CEBDF05001C7964 /* IncomingMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C03DE1CEBDF05001C7964 /* IncomingMessageCell.swift */; };
+		AA1C03E11CEBDF35001C7964 /* OutgoingMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C03E01CEBDF35001C7964 /* OutgoingMessageCell.swift */; };
 		AA4064191CDA770B00116BA8 /* DatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4064181CDA770B00116BA8 /* DatesCell.swift */; };
 		AA40641B1CDAC9AE00116BA8 /* GradesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40641A1CDAC9AE00116BA8 /* GradesCell.swift */; };
-		AA4A6FA21CDBF9E400E32AE6 /* dataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A6FA11CDBF9E400E32AE6 /* dataStruct.swift */; };
+		AA4A6FA21CDBF9E400E32AE6 /* DataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A6FA11CDBF9E400E32AE6 /* DataStruct.swift */; };
 		AA64A5901CDDAA5100C8F6DC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA64A58F1CDDAA5100C8F6DC /* SWRevealViewController.m */; };
 		AA64A5931CDDBCDB00C8F6DC /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA64A5921CDDBCDB00C8F6DC /* MenuController.swift */; };
 		AA67BC071CE42AD500ECDB9F /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA67BBFE1CE42AD500ECDB9F /* Nunito-Black.ttf */; };
@@ -65,7 +70,6 @@
 		AAC232AE1CD92250005AAE42 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC232AD1CD9224F005AAE42 /* SwiftyJSON.swift */; };
 		AAC232CE1CD92845005AAE42 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC232BE1CD927CD005AAE42 /* Alamofire.framework */; };
 		AAC232CF1CD92873005AAE42 /* Alamofire.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = AAC232BE1CD927CD005AAE42 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AAC232D11CD928D9005AAE42 /* serverAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC232D01CD928D9005AAE42 /* serverAPI.swift */; };
 		AAEDABDE1CE2A4DA00AEA4AB /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDABDD1CE2A4DA00AEA4AB /* MainMenuController.swift */; };
 		AAEDABE01CE2AA3F00AEA4AB /* MenuCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDABDF1CE2AA3F00AEA4AB /* MenuCourseCell.swift */; };
 		AAFC4A661CD98F3C0009150C /* AnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC4A651CD98F3C0009150C /* AnnouncementCell.swift */; };
@@ -159,9 +163,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AA1C03D21CEBD89C001C7964 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = ../ChatViewController.swift; sourceTree = "<group>"; };
+		AA1C03DA1CEBDD0A001C7964 /* ChatMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMenuViewController.swift; sourceTree = "<group>"; };
+		AA1C03DC1CEBDDE8001C7964 /* ChatMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMenuCell.swift; sourceTree = "<group>"; };
+		AA1C03DE1CEBDF05001C7964 /* IncomingMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingMessageCell.swift; sourceTree = "<group>"; };
+		AA1C03E01CEBDF35001C7964 /* OutgoingMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingMessageCell.swift; sourceTree = "<group>"; };
 		AA4064181CDA770B00116BA8 /* DatesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesCell.swift; sourceTree = "<group>"; };
 		AA40641A1CDAC9AE00116BA8 /* GradesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesCell.swift; sourceTree = "<group>"; };
-		AA4A6FA11CDBF9E400E32AE6 /* dataStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataStruct.swift; sourceTree = "<group>"; };
+		AA4A6FA11CDBF9E400E32AE6 /* DataStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStruct.swift; sourceTree = "<group>"; };
 		AA64A58D1CDDAA5100C8F6DC /* SwivelMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwivelMobile-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA64A58E1CDDAA5100C8F6DC /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		AA64A58F1CDDAA5100C8F6DC /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -224,7 +233,6 @@
 		AABC67451CE19199009950C8 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		AAC232AD1CD9224F005AAE42 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		AAC232B31CD927CC005AAE42 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
-		AAC232D01CD928D9005AAE42 /* serverAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serverAPI.swift; sourceTree = "<group>"; };
 		AAEDABDD1CE2A4DA00AEA4AB /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		AAEDABDF1CE2AA3F00AEA4AB /* MenuCourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCourseCell.swift; sourceTree = "<group>"; };
 		AAFC4A651CD98F3C0009150C /* AnnouncementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
@@ -283,6 +291,35 @@
 			path = Socket/nunito;
 			sourceTree = "<group>";
 		};
+		AA99D4E71CED271F00E6A66C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA1C03DA1CEBDD0A001C7964 /* ChatMenuViewController.swift */,
+				AA1C03D21CEBD89C001C7964 /* ChatViewController.swift */,
+				AAAA25831CD53C6A0096D0A1 /* AnnouncementViewController.swift */,
+				AA9EE2321CE1009A003470D8 /* DatesViewController.swift */,
+				AAAA25851CD53C6A0096D0A1 /* GradesViewController.swift */,
+				AAEDABDD1CE2A4DA00AEA4AB /* MainMenuController.swift */,
+				AA64A5921CDDBCDB00C8F6DC /* MenuController.swift */,
+				AA67BC181CE43B5800ECDB9F /* LandingPageController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AA99D4E81CED274600E6A66C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AA1C03DE1CEBDF05001C7964 /* IncomingMessageCell.swift */,
+				AA1C03E01CEBDF35001C7964 /* OutgoingMessageCell.swift */,
+				AA1C03DC1CEBDDE8001C7964 /* ChatMenuCell.swift */,
+				AAFC4A651CD98F3C0009150C /* AnnouncementCell.swift */,
+				AAEDABDF1CE2AA3F00AEA4AB /* MenuCourseCell.swift */,
+				AA40641A1CDAC9AE00116BA8 /* GradesCell.swift */,
+				AA4064181CDA770B00116BA8 /* DatesCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		AAAA25751CD53C690096D0A1 = {
 			isa = PBXGroup;
 			children = (
@@ -307,23 +344,15 @@
 		AAAA25801CD53C6A0096D0A1 /* SwivelMobile */ = {
 			isa = PBXGroup;
 			children = (
+				AAAA25811CD53C6A0096D0A1 /* AppDelegate.swift */,
+				AAAA25871CD53C6A0096D0A1 /* Main.storyboard */,
+				AAAA258A1CD53C6A0096D0A1 /* Assets.xcassets */,
+				AABC673F1CE1560D009950C8 /* SocketIOManager.swift */,
+				AA4A6FA11CDBF9E400E32AE6 /* DataStruct.swift */,
+				AA99D4E71CED271F00E6A66C /* View Controllers */,
+				AA99D4E81CED274600E6A66C /* Cells */,
 				AA64A5911CDDB93F00C8F6DC /* SWRevealViewController */,
 				AAC232B21CD9231A005AAE42 /* Supporting Files */,
-				AAC232B01CD922F8005AAE42 /* Libraries */,
-				AAAA25811CD53C6A0096D0A1 /* AppDelegate.swift */,
-				AA4A6FA11CDBF9E400E32AE6 /* dataStruct.swift */,
-				AAAA25831CD53C6A0096D0A1 /* AnnouncementViewController.swift */,
-				AAAA25851CD53C6A0096D0A1 /* GradesViewController.swift */,
-				AA9EE2321CE1009A003470D8 /* DatesViewController.swift */,
-				AAEDABDD1CE2A4DA00AEA4AB /* MainMenuController.swift */,
-				AA64A5921CDDBCDB00C8F6DC /* MenuController.swift */,
-				AAFC4A651CD98F3C0009150C /* AnnouncementCell.swift */,
-				AAEDABDF1CE2AA3F00AEA4AB /* MenuCourseCell.swift */,
-				AA40641A1CDAC9AE00116BA8 /* GradesCell.swift */,
-				AA4064181CDA770B00116BA8 /* DatesCell.swift */,
-				AAC232D01CD928D9005AAE42 /* serverAPI.swift */,
-				AABC673F1CE1560D009950C8 /* SocketIOManager.swift */,
-				AA67BC181CE43B5800ECDB9F /* LandingPageController.swift */,
 			);
 			path = SwivelMobile;
 			sourceTree = "<group>";
@@ -389,14 +418,6 @@
 			path = Socket;
 			sourceTree = "<group>";
 		};
-		AAC232B01CD922F8005AAE42 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				AAC232AD1CD9224F005AAE42 /* SwiftyJSON.swift */,
-			);
-			name = Libraries;
-			sourceTree = "<group>";
-		};
 		AAC232B21CD9231A005AAE42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,9 +427,8 @@
 				AA9EE2301CE10087003470D8 /* KDCircularProgress.swift */,
 				AA67BC161CE42CF000ECDB9F /* Simple-Line-Icons.ttf */,
 				AAAA258C1CD53C6A0096D0A1 /* LaunchScreen.storyboard */,
-				AAAA25871CD53C6A0096D0A1 /* Main.storyboard */,
-				AAAA258A1CD53C6A0096D0A1 /* Assets.xcassets */,
 				AAAA258F1CD53C6A0096D0A1 /* Info.plist */,
+				AAC232AD1CD9224F005AAE42 /* SwiftyJSON.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -634,12 +654,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAC232D11CD928D9005AAE42 /* serverAPI.swift in Sources */,
 				AABC672B1CE155D0009950C8 /* SocketAnyEvent.swift in Sources */,
-				AA4A6FA21CDBF9E400E32AE6 /* dataStruct.swift in Sources */,
+				AA4A6FA21CDBF9E400E32AE6 /* DataStruct.swift in Sources */,
 				AABC67301CE155D0009950C8 /* SocketEngineSpec.swift in Sources */,
 				AABC67401CE1560D009950C8 /* SocketIOManager.swift in Sources */,
 				AABC67351CE155D0009950C8 /* SocketIOClientSpec.swift in Sources */,
+				AA1C03E11CEBDF35001C7964 /* OutgoingMessageCell.swift in Sources */,
 				AAAA25861CD53C6A0096D0A1 /* GradesViewController.swift in Sources */,
 				AABC673A1CE155D0009950C8 /* SocketStringReader.swift in Sources */,
 				AAEDABDE1CE2A4DA00AEA4AB /* MainMenuController.swift in Sources */,
@@ -665,14 +685,18 @@
 				AABC67331CE155D0009950C8 /* SocketIOClient.swift in Sources */,
 				AABC673E1CE155D0009950C8 /* WebSocket.swift in Sources */,
 				AABC67291CE155D0009950C8 /* SocketAckEmitter.swift in Sources */,
+				AA1C03DF1CEBDF05001C7964 /* IncomingMessageCell.swift in Sources */,
+				AA1C03DB1CEBDD0A001C7964 /* ChatMenuViewController.swift in Sources */,
 				AAAA25841CD53C6A0096D0A1 /* AnnouncementViewController.swift in Sources */,
 				AA9EE2311CE10087003470D8 /* KDCircularProgress.swift in Sources */,
 				AA40641B1CDAC9AE00116BA8 /* GradesCell.swift in Sources */,
 				AAFC4A661CD98F3C0009150C /* AnnouncementCell.swift in Sources */,
+				AA1C03D31CEBD89C001C7964 /* ChatViewController.swift in Sources */,
 				AAC232AE1CD92250005AAE42 /* SwiftyJSON.swift in Sources */,
 				AA64A5931CDDBCDB00C8F6DC /* MenuController.swift in Sources */,
 				AA64A5901CDDAA5100C8F6DC /* SWRevealViewController.m in Sources */,
 				AABC67341CE155D0009950C8 /* SocketIOClientOption.swift in Sources */,
+				AA1C03DD1CEBDDE8001C7964 /* ChatMenuCell.swift in Sources */,
 				AABC67281CE155D0009950C8 /* NSCharacterSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
