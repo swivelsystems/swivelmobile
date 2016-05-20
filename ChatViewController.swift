@@ -18,7 +18,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     //Temp Variables
-    
+ 
+    @IBOutlet weak var conBottomEditor: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var scrollBox: UIScrollView!
@@ -45,6 +46,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                self.scrollToBottom()
 //            })
 //        }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.handleKeyboardDidShowNotification(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.handleKeyboardDidHideNotification(_:)), name: UIKeyboardDidHideNotification, object: nil)
+        
         self.backButton.setTitle("\u{e07a}", forState: .Normal)
         let topBorder: CALayer = CALayer()
         topBorder.frame = CGRectMake(0.0, 0.0, inputBar.frame.size.width, 1.0)
@@ -81,6 +86,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
+    
     func scrollToBottom() {
         let delay = 0.1 * Double(NSEC_PER_SEC)
         
@@ -94,6 +100,24 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+    
+    func handleKeyboardDidShowNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                conBottomEditor.constant = keyboardFrame.size.height + 40
+                view.layoutIfNeeded()
+            }
+            print("scrolling")
+            let bottomOffset = CGPointMake(0, self.scrollBox.contentSize.height - self.scrollBox.bounds.size.height)
+            scrollBox.setContentOffset(bottomOffset, animated: true)
+        }
+    }
+    
+    
+    func handleKeyboardDidHideNotification(notification: NSNotification) {
+        conBottomEditor.constant = 0
+        view.layoutIfNeeded()
     }
 
     
@@ -118,6 +142,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let message = currentChatMessage["message"] as! String
         let messageDate = currentChatMessage["date"] as! String
         
+        cell.timeStamp.text = senderUsername + " | " + messageDate
         //if user is the sender
         if senderUsername == Package.sharedInstance.username {
             cell.message.textColor = UIColor.whiteColor()
@@ -126,12 +151,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.timeStamp.textAlignment = NSTextAlignment.Right
             cell.container.backgroundColor = UIColor(colorLiteralRed: 46/255, green: 204/255, blue: 113/255, alpha: 0.8)
             cell.container.layer.borderColor = UIColor(colorLiteralRed: 46/255, green: 204/255, blue: 113/255, alpha: 0.8).CGColor
+            cell.timeStamp.text = "Me | " + messageDate
         }
         cell.container.layer.borderWidth = 1
         cell.container.layer.cornerRadius = 12
         
         cell.message.text = message
-        cell.timeStamp.text = senderUsername + " | " + messageDate
         
         return cell
     }

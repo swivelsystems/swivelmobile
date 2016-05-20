@@ -31,12 +31,13 @@ class SocketIOManager: NSObject {
     
     func getMessage(completionHandler: (messageInfo: [String: AnyObject]) -> Void) {
         socket.on("newMessage") { (dataArray, socketAck) -> Void in
-            print(dataArray[0][0],dataArray[0][1],dataArray[0][7])
             var messageDictionary = [String: AnyObject]()
-            
-            messageDictionary["username"] = dataArray[0][0] as! String
-            messageDictionary["message"] = dataArray[0][1] as! String
-            messageDictionary["date"] = dataArray[0][7] as!String
+            //print(dataArray)
+            let data = dataArray[0] as! NSMutableArray
+            print(data[1],data[2],data[7])
+            messageDictionary["username"] = data[0]
+            messageDictionary["message"] = data[1]
+            messageDictionary["date"] = data[8]
             completionHandler(messageInfo: messageDictionary)
         }
     }
