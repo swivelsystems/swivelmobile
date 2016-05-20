@@ -70,7 +70,7 @@ class GradesViewController: UIViewController, UITableViewDataSource, UITableView
 
     func changeGrade(newGrade: Double) {
         let angle = newAngle(newGrade)
-        circularOverallGrade.animateFromAngle(0, toAngle: angle, duration: 1, completion: nil)
+        circularOverallGrade.animateFromAngle(0, toAngle: angle, duration: 0.5, completion: nil)
        // circularOverallGrade.animateFromAngle(angle, duration: 1, completion: nil)
         textGrade.text = String(round(100*newGrade)/100) + " %"
     }
